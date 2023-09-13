@@ -59,7 +59,7 @@ This plug-in generates a `ssdp.log` by the command below:
 ```
 
 ## Log type and description
-This plug-in monitors all functions of cifs and outputs them as `ssdp.log`.
+This plug-in monitors all functions of ssdp and outputs them as `ssdp.log`.
 
 | Field | Type | Description |
 | --- | --- | --- |
