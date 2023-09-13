@@ -1,1 +1,92 @@
+# Zeek-Parser-SSDP
+
+## Overview
+
+Zeek-Parser-SSDP is a Zeek plug-in that can analyze communication using SSDP.
+
+## Usage
+
+### Manual Installation
+
+Before using this plug-in, please make sure Zeek, Spicy has been installed.
+
+````
+# Check Zeek
+~$ zeek -version
+zeek version 5.0.0
+
+# Check Spicy
+~$ spicyz -version
+1.3.16
+~$ spicyc -version
+spicyc v1.5.0 (d0bc6053)
+
+# As a premise, the path of zeek in this manual is as below
+~$ which zeek
+/usr/local/zeek/bin/zeek
+````
+
+Use `git clone` to get a copy of this repository to your local environment.
+```
+~$ git clone https://github.com/nttcom/zeek-parser-SSDP.git
+```
+
+Compile source code and copy the object files to the following path.
+```
+~$ cd ~/zeek-parser-SSDP/analyzer
+~$ spicyz -o ssdp.hlto ssdp.spicy ssdp.evt
+# ssdp.hltoが生成されます
+~$ cp ssdp.hlto /usr/local/zeek/lib/zeek-spicy/modules/
+```
+
+Then, copy the zeek file to the following paths.
+```
+~$ cd ~/zeek-parser-SSDP/scripts/
+~$ cp main.zeek /usr/local/zeek/share/zeek/site/
+```
+
+Finally, import the Zeek plugin.
+```
+~$ tail /usr/local/zeek/share/zeek/site/local.zeek
+... Omit ...
+@load SSDP
+```
+
+This plug-in generates a `ssdp.log` by the command below:
+```
+~$ cd ~/zeek-parser-SSDP/testing/Traces
+~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
+```
+
+## Log type and description
+This plug-in monitors all functions of cifs and outputs them as `ssdp.log`.
+
+| Field | Type | Description |
+| --- | --- | --- |
+| ts | time | timestamp of the communication |
+| SrcIP | addr | source IP address  |
+| SrcMAC | string | source MAC address |
+| Method | string | information about request method |
+| SERVER_or_USER_AGENT | string | identification info and detailed version of device or service |
+
+An example of `ssdp.log` is as follows:
+```
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ssdp
+#open	2023-09-13-04-35-24
+#fields	ts	SrcIP	SrcMAC	Method	SERVER_or_USER_AGENT
+#types	time	addr	string	string	string
+1668040655.960467	192.168.1.131	dc:72:23:56:9a:d1	NOTIFY	Linux/4.14.76+ UPnP/1.0 CyberLinkJava/1.8
+1668040683.179186	192.168.1.130	14:da:e9:cd:9f:0c	M-SEARCH Request	-
+1668040683.884088	192.168.1.130	14:da:e9:cd:9f:0c	M-SEARCH Request	Google Chrome/106.0.5249.119 Linux
+#close	2023-09-13-04-35-24
+```
+
+## Related Software
+
+This plug-in is used by [OsecT](https://github.com/nttcom/OsecT).
+
 
