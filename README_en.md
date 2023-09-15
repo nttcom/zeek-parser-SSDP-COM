@@ -1,8 +1,8 @@
-# Zeek-Parser-SSDP
+# Zeek-Parser-SSDP-COM
 
 ## Overview
 
-Zeek-Parser-SSDP is a Zeek plug-in that can analyze communication using SSDP.
+Zeek-Parser-SSDP-COM is a Zeek plug-in that can analyze communication using SSDP(Simple Service Discovery Protocol).
 
 ## Usage
 
