@@ -1,10 +1,10 @@
-# Zeek-Parser-SSDP
+# Zeek-Parser-SSDP-COM
 
 English is [here](https://github.com/nttcom/zeek-parser-SSDP/blob/main/README_en.md)
 
 ## 概要
 
-Zeek-Parser-SSDPとはSSDPを解析できるZeekプラグインです。
+Zeek-Parser-SSDP-COMとはSSDP(Simple Service Discovery Protocol)を解析できるZeekプラグインです。
 
 ## 使い方
 
@@ -66,7 +66,7 @@ spicyc v1.5.0 (d0bc6053)
 | --- | --- | --- |
 | ts | time | 通信した時のタイムスタンプ |
 | SrcIP | addr | 送信元IPアドレス  |
-| SrcMAC | string | 送信元macアドレス |
+| SrcMAC | string | 送信元MACアドレス |
 | Method | string | リクエストメソッドに関する情報 |
 | SERVER_or_USER_AGENT | string | デバイスやサービスの識別情報や詳細なバージョン情報 |
 
@@ -87,7 +87,7 @@ spicyc v1.5.0 (d0bc6053)
 #close	2023-09-13-04-35-24
 ```
 
-## 関連ソフトウエア
+## 関連ソフトウェア
 
 本プラグインは[OsecT](https://github.com/nttcom/OsecT)で利用されています。
 
