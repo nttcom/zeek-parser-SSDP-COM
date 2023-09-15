@@ -29,12 +29,12 @@ spicyc v1.5.0 (d0bc6053)
 
 本リポジトリをローカル環境に `git clone` します。
 ```
-~$ git clone https://github.com/nttcom/zeek-parser-SSDP.git
+~$ git clone https://github.com/nttcom/zeek-parser-SSDP-COM.git
 ```
 
 ソースコードをコンパイルして、オブジェクトファイルを以下のパスにコピーします。
 ```
-~$ cd ~/zeek-parser-SSDP/analyzer
+~$ cd ~/zeek-parser-SSDP-COM/analyzer
 ~$ spicyz -o ssdp.hlto ssdp.spicy ssdp.evt
 # ssdp.hltoが生成されます
 ~$ cp ssdp.hlto /usr/local/zeek/lib/zeek-spicy/modules/
@@ -42,7 +42,7 @@ spicyc v1.5.0 (d0bc6053)
 
 同様にZeekファイルを以下のパスにコピーします。
 ```
-~$ cd ~/zeek-parser-SSDP/scripts/
+~$ cd ~/zeek-parser-SSDP-COM/scripts/
 ~$ cp main.zeek /usr/local/zeek/share/zeek/site/
 ```
 
@@ -55,7 +55,7 @@ spicyc v1.5.0 (d0bc6053)
 
 本プラグインを使うことで `ssdp.log` が生成されます。
 ```
-~$ cd ~/zeek-parser-SSDP/testing/Traces
+~$ cd ~/zeek-parser-SSDP-COM/testing/Traces
 ~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
 ```
 
