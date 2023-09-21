@@ -43,7 +43,7 @@ spicyc v1.5.0 (d0bc6053)
 同様にZeekファイルを以下のパスにコピーします。
 ```
 ~$ cd ~/zeek-parser-SSDP-COM/scripts/
-~$ cp main.zeek /usr/local/zeek/share/zeek/site/
+~$ cp main.zeek /usr/local/zeek/share/zeek/site/SSDP.zeek
 ```
 
 最後にZeekプラグインをインポートします。
@@ -56,7 +56,7 @@ spicyc v1.5.0 (d0bc6053)
 本プラグインを使うことで `ssdp.log` が生成されます。
 ```
 ~$ cd ~/zeek-parser-SSDP-COM/testing/Traces
-~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
+~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/SSDP.zeek
 ```
 
 ## ログのタイプと説明
