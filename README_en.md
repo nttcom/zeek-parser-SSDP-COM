@@ -42,7 +42,7 @@ Compile source code and copy the object files to the following path.
 Then, copy the zeek file to the following paths.
 ```
 ~$ cd ~/zeek-parser-SSDP-COM/scripts/
-~$ cp main.zeek /usr/local/zeek/share/zeek/site/
+~$ cp main.zeek /usr/local/zeek/share/zeek/site/SSDP.zeek
 ```
 
 Finally, import the Zeek plugin.
@@ -55,7 +55,7 @@ Finally, import the Zeek plugin.
 This plug-in generates a `ssdp.log` by the command below:
 ```
 ~$ cd ~/zeek-parser-SSDP-COM/testing/Traces
-~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/main.zeek
+~$ zeek -Cr test.pcap /usr/local/zeek/share/zeek/site/SSDP.zeek
 ```
 
 ## Log type and description
