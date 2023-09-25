@@ -6,7 +6,17 @@ English is [here](https://github.com/nttcom/zeek-parser-SSDP/blob/main/README_en
 
 Zeek-Parser-SSDP-COMとはSSDP(Simple Service Discovery Protocol)を解析できるZeekプラグインです。
 
-## 使い方
+## インストール
+
+### パッケージマネージャーによるインストール
+
+このプラグインは[Zeek Package Manger](https://docs.zeek.org/projects/package-manager/en/stable/index.html)用のパッケージとして提供されています。
+
+以下のコマンドを実行することで、本プラグインは利用可能になります。
+```
+zkg refresh
+zkg install zeek-parser-SSDP-COM
+```
 
 ### マニュアルインストール
 
@@ -31,6 +41,18 @@ spicyc v1.5.0 (d0bc6053)
 ```
 ~$ git clone https://github.com/nttcom/zeek-parser-SSDP-COM.git
 ```
+
+## 使い方
+
+### パッケージマネージャーによるインストールの場合
+
+以下のように本プラグインを使うことで `mydhcp.log` が生成されます。
+
+```
+zeek -Cr /usr/local/zeek/var/lib/zkg/clones/package/zeek-parser-SSDP-COM/testing/Traces/test.pcap zeek-parser-SSDP-COM
+```
+
+### マニュアルインストールの場合
 
 ソースコードをコンパイルして、オブジェクトファイルを以下のパスにコピーします。
 ```
@@ -90,4 +112,3 @@ spicyc v1.5.0 (d0bc6053)
 ## 関連ソフトウェア
 
 本プラグインは[OsecT](https://github.com/nttcom/OsecT)で利用されています。
-
